@@ -18,7 +18,7 @@ const Header: React.FC = () => {
         </Heading>
         <Text my={2} fontWeight="400">
           Vadhe is here I am 👨🏻‍💻 FrontEnd + Learner & Other.
-          <br /> Now I am working at <a href="https://home.pallakastudio.com/">Pallaka Studio</a> and I am student <br /> at collage as well
+          <br /> I currently work at <a href="https://home.pallakastudio.com/">Pallaka Studio</a> and I am an college student <br /> aswell
         </Text>
         {/* <Text my={2} fontWeight="400">
           👨🏻 👨🏻‍💻 FrontEnd + Learner & Other ⚡🚀🛠️

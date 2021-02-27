@@ -1,36 +1,33 @@
-import * as React from 'react'
-import { NextPage } from 'next'
-import Link from 'next/link'
+import React from 'react'
+import { Grid, Box, Img, Link, Heading } from '@chakra-ui/react'
+import Card from '~/components/Card'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
-import Page from '~/components/Page'
-import PageHeader from '~/components/PageHeader'
-import PageBody from '~/components/PageBody'
-import Navigation from '~/components/Navigation'
-import Content from '~/components/Content'
-import relativeTime from '~/utils/relativeTime'
+const index: React.FC = () => {
+  return (
+    <Box my={4}>
+      <Header />
+      <Grid templateColumns="repeat(12, 1fr)" gap={6} mx={{ base: 2, lg: 52 }}>
+        <Card minH={96} base={12} lg={12}>
+          <Box>
+            <Heading my={2}>Recent Projects</Heading>
+            <Link href="https://resto-app-gold.vercel.app/" target="_blank">
+              <Box>
+                <Img src="./resto.png" alt="resto" />
+              </Box>
+            </Link>
+          </Box>
+        </Card>
+        {/* <Card height={72} base={12} lg={4} />
+        <Card height={72} base={12} lg={8} />
+        <Card height={96} base={12} lg={12} />
+        <Card height={72} base={12} lg={4} />
+        <Card height={72} base={12} lg={8} /> */}
+        <Footer />
+      </Grid>
+    </Box>
+  )
+}
 
-const lastUpdated = '2015-01-25T07:25:15+07:00'
-
-const IndexPage: NextPage = () => (
-  <Page>
-    <Navigation />
-    <Content>
-      <PageHeader>Hello world.</PageHeader>
-      <PageBody>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Certe non potest. Negabat igitur ullam esse artem, quae ipsa a se
-          proficisceretur; Duo Reges: constructio interrete. Quid turpius quam sapientis vitam ex insipientium sermone pendere? Non igitur
-          bene. Vide, quaeso, rectumne sit.
-        </p>
-        <p>
-          Last updated: <time dateTime={lastUpdated}>{relativeTime(new Date(lastUpdated))}</time> |{' '}
-          <Link href="/about" passHref>
-            <a>About</a>
-          </Link>
-        </p>
-      </PageBody>
-    </Content>
-  </Page>
-)
-
-export default IndexPage
+export default index
